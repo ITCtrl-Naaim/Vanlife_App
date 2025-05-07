@@ -1,0 +1,35 @@
+@use "../../assets/scss/variables";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem variables.$layoutInlinePadding;
+  .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+  }
+  nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      li {
+        a {
+          text-transform: capitalize;
+          color: variables.$grayClr;
+          font-weight: 600;
+          &:hover {
+            color: variables.$blackClr;
+          }
+        }
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use "./assets/scss/variables";
+@use "./assets/scss/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: variables.$beigeClr;
+  font-family: variables.$fontFamily;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex: 1;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.active-link {
+  color: variables.$blackClr !important;
+}
+
+.van-type {
+  &:hover,
+  &.selected {
+    color: variables.$darkBeigeClr !important;
+    &.simple {
+      background-color: variables.$simple !important;
+    }
+    &.luxury {
+      background-color: variables.$luxury !important;
+    }
+    &.rugged {
+      background-color: variables.$rugged !important;
+    }
+  }
+}

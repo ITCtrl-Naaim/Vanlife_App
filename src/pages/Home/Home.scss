@@ -1,0 +1,22 @@
+@use "../../assets/scss/_mixins.scss";
+@use "../../assets/scss/_variables.scss";
+
+.home-main {
+  background-image: url("../../assets/images/landing.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-inline: variables.$layoutInlinePadding;
+  .content {
+    color: #fff;
+    max-width: 30rem;
+    margin: 5rem auto;
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+    a {
+      @include mixins.buttonShape($padding: 1rem 0);
+      margin-top: 3rem;
+      width: 100%;
+    }
+  }
+}

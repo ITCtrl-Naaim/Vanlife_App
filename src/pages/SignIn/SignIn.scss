@@ -1,0 +1,45 @@
+@use "../../assets/scss/mixins";
+@use "../../assets/scss/variables";
+
+.sign-in-main {
+  text-align: center;
+  padding: 3rem variables.$layoutInlinePadding;
+  h1 {
+    margin-bottom: 2rem;
+  }
+  form {
+    max-width: 30rem;
+    margin: auto;
+    .inputs {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #d1d5db;
+      margin-bottom: 1.5rem;
+      input {
+        display: block;
+        width: 100%;
+        padding: 0.6rem 0.8rem;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        font-family: variables.$fontFamily;
+        &:first-child {
+          border-bottom: 1px solid #d1d5db;
+        }
+      }
+    }
+    button {
+      @include mixins.buttonShape($padding: 1rem 0);
+      width: 100%;
+      cursor: pointer;
+    }
+    .sign-up-text {
+      margin-top: 3rem;
+      font-weight: 500;
+      a {
+        color: variables.$orangeClr;
+        font-weight: 700;
+      }
+    }
+  }
+}

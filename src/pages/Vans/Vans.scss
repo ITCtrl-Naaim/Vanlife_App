@@ -1,0 +1,65 @@
+@use "../../assets/scss/mixins";
+@use "../../assets/scss/variables";
+
+.vans-main {
+  padding: 3rem variables.$layoutInlinePadding;
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0 3rem;
+    li button {
+      cursor: pointer;
+      border: none;
+      &.van-type {
+        @include mixins.buttonShape(
+          variables.$darkBeigeClr,
+          $color: variables.$grayClr
+        );
+      }
+      &.clear-filter {
+        background: none;
+        color: variables.$grayClr;
+        font-size: 1rem;
+        font-weight: 500;
+        font-family: variables.$fontFamily;
+        border-bottom: 1px solid variables.$grayClr;
+        transition: 0.3s;
+        &:hover {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .vans-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2rem;
+    .van-tile {
+      color: variables.$blackClr;
+      img {
+        width: 100%;
+        border-radius: 0.5rem;
+      }
+      .van-info {
+        margin-block: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .price {
+          font-size: 1.2rem;
+          font-weight: bold;
+          &::after {
+            content: attr(data-period);
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+        }
+      }
+      .van-type {
+        @include mixins.buttonShape();
+        text-transform: capitalize;
+      }
+    }
+  }
+}

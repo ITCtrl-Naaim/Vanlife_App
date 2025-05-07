@@ -1,0 +1,16 @@
+@use "../../assets/scss/variables";
+@use "../../assets/scss/mixins";
+
+.not-found-main {
+  padding: 3rem variables.$layoutInlinePadding;
+  max-width: 30rem;
+  margin: auto;
+  h1 {
+    color: variables.$blackClr;
+    margin-bottom: 2rem
+  }
+  a {
+    @include mixins.buttonShape(variables.$blackClr, $padding: 1rem);
+    width: 100%;
+  }
+}

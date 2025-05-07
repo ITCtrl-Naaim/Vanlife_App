@@ -1,0 +1,22 @@
+@use "./_variables.scss";
+
+@mixin buttonShape(
+  $bgClr: variables.$orangeClr,
+  $padding: 0.5rem 1rem,
+  $color: #fff,
+  $radius: 5px,
+  $fontSize: 1rem,
+  $fontWeight: bold
+) {
+  background-color: $bgClr;
+  color: $color;
+  font-family: variables.$fontFamily;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  border-radius: $radius;
+  padding: $padding;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  transition: 0.3s;
+}
