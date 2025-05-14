@@ -8,24 +8,24 @@ export default function Dashboard() {
 
   function renderElements(vans: Van[]) {
     const vansElements = vans.map((van) => (
-      <div className="van-tile">
+      <article className="van-tile">
         <img src={van.imageURL} alt={`${van.name} van's image`} />
         <div className="info">
           <h3>{van.name}</h3>
           <span className="price" data-period="/day">
-            $60
+            ${van.price}
           </span>
         </div>
         <Link to="edit" className="edit">
           Edit
         </Link>
-      </div>
+      </article>
     ));
     return vansElements;
   }
 
   return (
-    <div className="dashboard">
+    <section className="host-dashboard">
       <div className="welcome">
         <h1>Welcome!</h1>
         <div className="income">
@@ -60,6 +60,6 @@ export default function Dashboard() {
           </Suspense>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

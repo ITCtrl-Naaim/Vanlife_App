@@ -1,0 +1,38 @@
+.host-vans {
+  padding-inline: $layoutInlinePadding;
+  margin-block: 2.5rem;
+  .header {
+    margin-bottom: 1.5rem;
+  }
+  .vans-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .van-tile {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 6px;
+      img {
+        max-width: 4rem;
+        border-radius: 5px;
+      }
+      .info {
+        margin-left: 1rem;
+        h3 {
+          color: $blackClr;
+          margin-bottom: 0.625rem;
+        }
+        .price {
+          font-size: 1rem;
+          font-weight: 500;
+          color: $grayClr;
+          &::after {
+            content: attr(data-period);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,3 @@
-@use "./assets/scss/variables";
-@use "./assets/scss/mixins";
-
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +5,8 @@
 }
 
 body {
-  background-color: variables.$beigeClr;
-  font-family: variables.$fontFamily;
+  background-color: $beigeClr;
+  font-family: $fontFamily;
 }
 
 #root {
@@ -30,21 +27,21 @@ ul {
 }
 
 .active-link {
-  color: variables.$blackClr !important;
+  color: $blackClr !important;
 }
 
 .van-type {
   &:hover,
   &.selected {
-    color: variables.$darkBeigeClr !important;
+    color: $darkBeigeClr !important;
     &.simple {
-      background-color: variables.$simple !important;
+      background-color: $simple !important;
     }
     &.luxury {
-      background-color: variables.$luxury !important;
+      background-color: $luxury !important;
     }
     &.rugged {
-      background-color: variables.$rugged !important;
+      background-color: $rugged !important;
     }
   }
 }

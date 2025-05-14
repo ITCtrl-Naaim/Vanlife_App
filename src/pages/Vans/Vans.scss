@@ -1,8 +1,5 @@
-@use "../../assets/scss/mixins";
-@use "../../assets/scss/variables";
-
 .vans-main {
-  padding: 3rem variables.$layoutInlinePadding;
+  padding: 3rem $layoutInlinePadding;
   ul {
     display: flex;
     align-items: center;
@@ -12,18 +9,15 @@
       cursor: pointer;
       border: none;
       &.van-type {
-        @include mixins.buttonShape(
-          variables.$darkBeigeClr,
-          $color: variables.$grayClr
-        );
+        @include buttonShape($darkBeigeClr, $color: $grayClr);
       }
       &.clear-filter {
         background: none;
-        color: variables.$grayClr;
+        color: $grayClr;
         font-size: 1rem;
         font-weight: 500;
-        font-family: variables.$fontFamily;
-        border-bottom: 1px solid variables.$grayClr;
+        font-family: $fontFamily;
+        border-bottom: 1px solid $grayClr;
         transition: 0.3s;
         &:hover {
           font-weight: 700;
@@ -36,7 +30,7 @@
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 2rem;
     .van-tile {
-      color: variables.$blackClr;
+      color: $blackClr;
       img {
         width: 100%;
         border-radius: 0.5rem;
@@ -57,7 +51,7 @@
         }
       }
       .van-type {
-        @include mixins.buttonShape();
+        @include buttonShape();
         text-transform: capitalize;
       }
     }

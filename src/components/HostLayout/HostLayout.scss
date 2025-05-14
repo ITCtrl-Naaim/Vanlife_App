@@ -1,17 +1,14 @@
-@use "../../assets/scss/mixins";
-@use "../../assets/scss/variables";
-
 .host-layout-main {
   ul {
-    padding: 3rem variables.$layoutInlinePadding 0;
+    padding: 3rem $layoutInlinePadding 0;
     display: flex;
     gap: 1rem;
     li a {
-      color: variables.$grayClr;
+      color: $grayClr;
       font-size: 1.125rem;
       font-weight: 500;
       &:hover {
-        color: variables.$blackClr;
+        color: $blackClr;
       }
     }
   }

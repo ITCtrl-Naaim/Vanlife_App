@@ -1,12 +1,9 @@
-@use "../../assets/scss/mixins";
-@use "../../assets/scss/variables";
-
 .about-main {
   img {
     width: 100%;
   }
   .content {
-    padding: 3rem variables.$layoutInlinePadding;
+    padding: 3rem $layoutInlinePadding;
     h1 {
       margin-bottom: 1.5rem;
     }
@@ -16,7 +13,7 @@
       border-radius: 5px;
       margin-top: 3rem;
       a {
-        @include mixins.buttonShape(#000, 1rem 1.5rem, $radius: 10px);
+        @include buttonShape(#000, 1rem 1.5rem, $radius: 10px);
         margin-top: 1.5rem;
         position: relative;
         &::before {

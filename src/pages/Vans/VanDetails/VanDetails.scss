@@ -1,10 +1,7 @@
-@use "../../../assets/scss/mixins";
-@use "../../../assets/scss/variables";
-
 $vanInfoMargin: 1rem;
 
 .van-details-main {
-  padding: 3rem variables.$layoutInlinePadding;
+  padding: 3rem $layoutInlinePadding;
   .go-back {
     color: #201f1d;
     font-weight: 500;
@@ -43,7 +40,7 @@ $vanInfoMargin: 1rem;
         }
       }
       .van-type {
-        @include mixins.buttonShape();
+        @include buttonShape();
         text-transform: capitalize;
         margin-bottom: $vanInfoMargin;
       }
@@ -59,7 +56,7 @@ $vanInfoMargin: 1rem;
         }
       }
       .rent-btn {
-        @include mixins.buttonShape();
+        @include buttonShape();
         width: 100%;
         cursor: pointer;
         margin-top: $vanInfoMargin;

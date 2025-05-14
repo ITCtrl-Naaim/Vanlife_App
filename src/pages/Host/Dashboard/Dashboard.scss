@@ -1,12 +1,9 @@
-@use "../../../assets/scss/mixins";
-@use "../../../assets/scss/variables";
-
-.dashboard {
-  margin-top: 2rem;
+.host-dashboard {
+  margin-block: 2.5rem;
   .details,
   .view-all,
   .edit {
-    color: variables.$blackClr;
+    color: $blackClr;
     font-weight: 500;
   }
   .income,
@@ -17,14 +14,14 @@
     align-items: center;
   }
   .welcome {
-    background-color: variables.$darkBeigeClr;
-    padding: 2rem 1.5rem;
+    background-color: $darkBeigeClr;
+    padding: 2rem $layoutInlinePadding;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     .income {
       p {
-        color: variables.$grayClr;
+        color: $grayClr;
         font-weight: 500;
         span {
           font-weight: bold;
@@ -33,28 +30,29 @@
       }
     }
     .total {
-      color: variables.$blackClr;
+      color: $blackClr;
       font-size: 3rem;
       font-weight: 800;
     }
   }
   .review-score {
     background-color: #ffddb2;
-    padding: 2rem 1.5rem;
+    padding: 2rem $layoutInlinePadding;
     h2 {
-      color: variables.$blackClr;
+      color: $blackClr;
       .star {
-        color: variables.$orangeClr;
+        color: $orangeClr;
         margin-left: 1rem;
       }
       span {
-        color: variables.$grayClr;
+        color: $grayClr;
         font-weight: 500;
       }
     }
   }
   .vans-list {
-    padding: 2.375rem variables.$layoutInlinePadding;
+    padding-inline: $layoutInlinePadding;
+    margin-top: 2.375rem;
     .header {
       margin-bottom: 2rem;
     }
@@ -75,12 +73,13 @@
         .info {
           margin-left: 1rem;
           h3 {
+            color: $blackClr;
             margin-bottom: 0.625rem;
           }
           .price {
             font-size: 1rem;
             font-weight: 500;
-            color: variables.$grayClr;
+            color: $grayClr;
             &::after {
               content: attr(data-period);
             }

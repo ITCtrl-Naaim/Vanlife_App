@@ -1,9 +1,6 @@
-@use "../../assets/scss/mixins";
-@use "../../assets/scss/variables";
-
 .sign-in-main {
   text-align: center;
-  padding: 3rem variables.$layoutInlinePadding;
+  padding: 3rem $layoutInlinePadding;
   h1 {
     margin-bottom: 2rem;
   }
@@ -22,14 +19,14 @@
         border: none;
         outline: none;
         font-size: 1rem;
-        font-family: variables.$fontFamily;
+        font-family: $fontFamily;
         &:first-child {
           border-bottom: 1px solid #d1d5db;
         }
       }
     }
     button {
-      @include mixins.buttonShape($padding: 1rem 0);
+      @include buttonShape($padding: 1rem 0);
       width: 100%;
       cursor: pointer;
     }
@@ -37,7 +34,7 @@
       margin-top: 3rem;
       font-weight: 500;
       a {
-        color: variables.$orangeClr;
+        color: $orangeClr;
         font-weight: 700;
       }
     }
