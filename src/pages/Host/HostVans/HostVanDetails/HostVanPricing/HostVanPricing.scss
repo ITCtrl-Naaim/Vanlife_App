@@ -1,0 +1,13 @@
+.host-van-pricing {
+  .price {
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    &::after {
+      content: attr(data-period);
+      font-size: 1rem;
+      color: $grayClr;
+    }
+  }
+}

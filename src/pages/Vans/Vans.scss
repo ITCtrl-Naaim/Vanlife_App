@@ -52,7 +52,6 @@
       }
       .van-type {
         @include buttonShape();
-        text-transform: capitalize;
       }
     }
   }

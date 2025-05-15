@@ -41,7 +41,6 @@ $vanInfoMargin: 1rem;
       }
       .van-type {
         @include buttonShape();
-        text-transform: capitalize;
         margin-bottom: $vanInfoMargin;
       }
       .price {

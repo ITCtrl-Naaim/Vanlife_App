@@ -1,7 +1,7 @@
 // React / React Router
 import { RouterProvider, createBrowserRouter } from "react-router";
 
-// Importing Seperate Components
+// Importing Layouts
 import Layout from "./components/Layout";
 import HostLayout from "./components/HostLayout/HostLayout";
 
@@ -16,12 +16,17 @@ import Dashboard from "./pages/Host/Dashboard/Dashboard";
 import Income from "./pages/Host/Income/Income";
 import HostVans from "./pages/Host/HostVans/HostVans";
 import Reviews from "./pages/Host/Reviews/Reviews";
+import HostVanDetails from "./pages/Host/HostVans/HostVanDetails/HostVanDetails";
+import HostVanInfo from "./pages/Host/HostVans/HostVanDetails/HostVanInfo/HostVanInfo";
+import HostVanPricing from "./pages/Host/HostVans/HostVanDetails/HostVanPricing/HostVanPricing";
+import HostVanPhotos from "./pages/Host/HostVans/HostVanDetails/HostVanPhotos/HostVanPhotos";
 
 // Importing Loaders
 import { loader as vansLoader } from "./loaders/vansLoader";
 import { loader as vanDetailsLoader } from "./loaders/vanDetailsLoader";
 import { loader as dashboardLoader } from "./loaders/dashboardLoader";
 import { loader as hostVansLoader } from "./loaders/hostVansLoader";
+import { loader as hostVanDetailsLoader } from "./loaders/hostVanDetailsLoader";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +54,25 @@ const router = createBrowserRouter([
             path: "vans",
             element: <HostVans />,
             loader: hostVansLoader,
+          },
+          {
+            path: "vans/:id",
+            element: <HostVanDetails />,
+            loader: hostVanDetailsLoader,
+            children: [
+              {
+                index: true,
+                element: <HostVanInfo />,
+              },
+              {
+                path: "pricing",
+                element: <HostVanPricing />,
+              },
+              {
+                path: "photos",
+                element: <HostVanPhotos />,
+              },
+            ],
           },
           {
             path: "reviews",

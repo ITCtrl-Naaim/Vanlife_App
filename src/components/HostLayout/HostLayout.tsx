@@ -4,7 +4,7 @@ import "./HostLayout.scss";
 export default function HostLayout() {
   return (
     <main className="host-layout-main">
-      <ul>
+      <ul className="host-nav">
         <li>
           <NavLink
             to="."
