@@ -25,8 +25,8 @@ export default function Income() {
     { profit: 980, date: "10/11/22" },
   ];
 
-  const transactionsElements = transactionsData.map((element) => (
-    <article className="transaction-item">
+  const transactionsElements = transactionsData.map((element, index) => (
+    <article key={index} className="transaction-item">
       <span className="profit">${element.profit}</span>
       <span className="date">{element.date}</span>
     </article>

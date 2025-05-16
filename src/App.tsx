@@ -27,6 +27,7 @@ import { loader as vanDetailsLoader } from "./loaders/vanDetailsLoader";
 import { loader as dashboardLoader } from "./loaders/dashboardLoader";
 import { loader as hostVansLoader } from "./loaders/hostVansLoader";
 import { loader as hostVanDetailsLoader } from "./loaders/hostVanDetailsLoader";
+import { loader as reviewsLoader } from "./loaders/reviewsLoader";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,7 @@ const router = createBrowserRouter([
           {
             path: "reviews",
             element: <Reviews />,
+            loader: reviewsLoader,
           },
         ],
       },

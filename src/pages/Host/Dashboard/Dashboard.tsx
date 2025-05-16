@@ -8,7 +8,7 @@ export default function Dashboard() {
 
   function renderElements(vans: Van[]) {
     const vansElements = vans.map((van) => (
-      <article className="van-tile">
+      <article key={van.id} className="van-tile">
         <img src={van.imageURL} alt={`${van.name} van's image`} />
         <div className="info">
           <h3>{van.name}</h3>

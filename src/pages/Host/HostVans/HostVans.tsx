@@ -8,7 +8,7 @@ export default function HostVans() {
 
   function renderElements(vans: Van[]) {
     const vansElements = vans.map((van) => (
-      <Link to={van.id} className="van-tile">
+      <Link to={van.id} key={van.id} className="van-tile">
         <img src={van.imageURL} alt={`${van.name} van's image`} />
         <div className="info">
           <h3>{van.name}</h3>
