@@ -7,11 +7,21 @@ export default function SignIn() {
       <h1>Sign in to your account</h1>
       <Form method="post">
         <div className="inputs">
-          <input type="email" name="email" placeholder="Email address" />
-          <input type="password" name="password" placeholder="Password" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email address"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
         </div>
         <button>Sign in</button>
-        <p className="sign-up-text">
+        <p className="redirect-text">
           Don't have an account? <Link to="/signup">Create one now</Link>
         </p>
       </Form>

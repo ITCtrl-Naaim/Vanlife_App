@@ -1,24 +1,6 @@
-import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  doc,
-  getDoc,
-} from "firebase/firestore";
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { db } from "./config";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDZq8oZafFQKpB1tvF_jjZWrVXJh5gYatU",
-  authDomain: "vanlife-b61f7.firebaseapp.com",
-  projectId: "vanlife-b61f7",
-  storageBucket: "vanlife-b61f7.firebasestorage.app",
-  messagingSenderId: "174435887162",
-  appId: "1:174435887162:web:13cc24a416672f2b942d03",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 const vansCollectionRef = collection(db, "vans");
 const commentsCollectionRef = collection(db, "comments");
 

@@ -1,4 +1,4 @@
-.sign-in-main {
+.sign-up-main {
   text-align: center;
   padding: 3rem $layoutInlinePadding;
   h1 {
@@ -20,7 +20,7 @@
         outline: none;
         font-size: 1rem;
         font-family: $fontFamily;
-        &:first-child {
+        &:not(:last-child) {
           border-bottom: 1px solid #d1d5db;
         }
       }

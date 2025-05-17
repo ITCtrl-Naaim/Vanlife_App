@@ -1,15 +1,16 @@
-// React / React Router
+// Import React / React Router
 import { RouterProvider, createBrowserRouter } from "react-router";
 
-// Importing Layouts
+// Import Layouts
 import Layout from "./components/Layout";
 import HostLayout from "./components/HostLayout/HostLayout";
 
-// Importing Pages
+// Import Pages
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Vans from "./pages/Vans/Vans";
 import SignIn from "./pages/SignIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
 import VanDetails from "./pages/Vans/VanDetails/VanDetails";
 import NotFound from "./pages/NotFound/NotFound";
 import Dashboard from "./pages/Host/Dashboard/Dashboard";
@@ -21,13 +22,16 @@ import HostVanInfo from "./pages/Host/HostVans/HostVanDetails/HostVanInfo/HostVa
 import HostVanPricing from "./pages/Host/HostVans/HostVanDetails/HostVanPricing/HostVanPricing";
 import HostVanPhotos from "./pages/Host/HostVans/HostVanDetails/HostVanPhotos/HostVanPhotos";
 
-// Importing Loaders
+// Import Loaders
 import { loader as vansLoader } from "./loaders/vansLoader";
 import { loader as vanDetailsLoader } from "./loaders/vanDetailsLoader";
 import { loader as dashboardLoader } from "./loaders/dashboardLoader";
 import { loader as hostVansLoader } from "./loaders/hostVansLoader";
 import { loader as hostVanDetailsLoader } from "./loaders/hostVanDetailsLoader";
 import { loader as reviewsLoader } from "./loaders/reviewsLoader";
+
+// Import Actions
+import { action as signupAction } from "./pages/SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -99,6 +103,11 @@ const router = createBrowserRouter([
       {
         path: "signin",
         element: <SignIn />,
+      },
+      {
+        path: "signup",
+        element: <SignUp />,
+        action: signupAction,
       },
       {
         path: "*",

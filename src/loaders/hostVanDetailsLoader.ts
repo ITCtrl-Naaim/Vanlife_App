@@ -1,5 +1,5 @@
 import { LoaderFunctionArgs } from "react-router";
-import { getVan } from "../api";
+import { getVan } from "../firebase/api";
 
 export function loader({ params }: LoaderFunctionArgs) {
   const id = params.id;

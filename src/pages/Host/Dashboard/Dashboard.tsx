@@ -32,7 +32,7 @@ export default function Dashboard() {
           <p>
             Income last <span>30 days</span>
           </p>
-          <Link to="" className="details">
+          <Link to="income" className="details">
             Details
           </Link>
         </div>
@@ -43,14 +43,14 @@ export default function Dashboard() {
           Review score <i className="fa-solid fa-star star"></i> 5.0
           <span>/5</span>
         </h2>
-        <Link to="" className="details">
+        <Link to="reviews" className="details">
           Details
         </Link>
       </div>
       <div className="vans-list">
         <div className="header">
           <h2>Your listed vans</h2>
-          <Link to="" className="view-all">
+          <Link to="vans" className="view-all">
             View all
           </Link>
         </div>

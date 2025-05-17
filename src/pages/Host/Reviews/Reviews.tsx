@@ -15,18 +15,30 @@ export default function Reviews() {
       comment: string;
     }[]
   ) {
-    const ratingPercentage = 100;
+    const starsCount: { [key: string]: number } = {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+    };
+    for (const comment of commentsData) {
+      starsCount[comment.stars] += 1;
+    }
     const reviewsCount = commentsData.length;
 
-    const ratingItems = starsArray.map((rating) => (
-      <li key={rating}>
-        <span>{`${rating} ${rating === 1 ? "star" : "stars"}`}</span>
-        <div className="rating-bar">
-          <span style={{ width: `${ratingPercentage}%` }}></span>
-        </div>
-        <span>{ratingPercentage}%</span>
-      </li>
-    ));
+    const ratingItems = starsArray.map((rating) => {
+      const ratingPercentage = (starsCount[rating] / reviewsCount) * 100;
+      return (
+        <li key={rating}>
+          <span>{`${rating} ${rating === 1 ? "star" : "stars"}`}</span>
+          <div className="rating-bar">
+            <span style={{ width: `${ratingPercentage}%` }}></span>
+          </div>
+          <span>{ratingPercentage}%</span>
+        </li>
+      );
+    });
 
     const commentsElements = commentsData.map((comment, index) => {
       const stars = starsArray.map((_, index) => (
