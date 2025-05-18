@@ -50,3 +50,7 @@ ul {
     }
   }
 }
+
+button:disabled {
+  background-color: #aaa !important;
+}

@@ -29,9 +29,14 @@ import { loader as dashboardLoader } from "./loaders/dashboardLoader";
 import { loader as hostVansLoader } from "./loaders/hostVansLoader";
 import { loader as hostVanDetailsLoader } from "./loaders/hostVanDetailsLoader";
 import { loader as reviewsLoader } from "./loaders/reviewsLoader";
+import { loader as signInLoader } from "./loaders/signInLoader";
+import { loader as signUpLoader } from "./loaders/signUpLoader";
 
 // Import Actions
-import { action as signupAction } from "./pages/SignUp/SignUp";
+import { action as signUpAction } from "./pages/SignUp/SignUp";
+import { action as signInAction } from "./pages/SignIn/SignIn";
+import { checkAuth } from "./utils";
+import SignOut from "./pages/SignOut/SignOut";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +59,7 @@ const router = createBrowserRouter([
           {
             path: "income",
             element: <Income />,
+            loader: async ({ request }) => await checkAuth(request),
           },
           {
             path: "vans",
@@ -68,14 +74,17 @@ const router = createBrowserRouter([
               {
                 index: true,
                 element: <HostVanInfo />,
+                loader: async ({ request }) => await checkAuth(request),
               },
               {
                 path: "pricing",
                 element: <HostVanPricing />,
+                loader: async ({ request }) => await checkAuth(request),
               },
               {
                 path: "photos",
                 element: <HostVanPhotos />,
+                loader: async ({ request }) => await checkAuth(request),
               },
             ],
           },
@@ -103,11 +112,18 @@ const router = createBrowserRouter([
       {
         path: "signin",
         element: <SignIn />,
+        loader: signInLoader,
+        action: signInAction,
       },
       {
         path: "signup",
         element: <SignUp />,
-        action: signupAction,
+        loader: signUpLoader,
+        action: signUpAction,
+      },
+      {
+        path: "signout",
+        element: <SignOut />,
       },
       {
         path: "*",

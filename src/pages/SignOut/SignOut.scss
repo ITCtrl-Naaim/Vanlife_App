@@ -1,0 +1,10 @@
+.sign-out-main {
+  padding-inline: $layoutInlinePadding;
+  margin-top: 2rem;
+  text-align: center;
+  .sign-out-button {
+    @include buttonShape();
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+}

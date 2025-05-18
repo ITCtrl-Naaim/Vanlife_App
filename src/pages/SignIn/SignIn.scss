@@ -4,6 +4,14 @@
   h1 {
     margin-bottom: 2rem;
   }
+  .sign-in-error {
+    color: #ff5555;
+    margin-bottom: 1rem;
+  }
+  .form-error {
+    color: #ff5555;
+    margin-bottom: 1rem;
+  }
   form {
     max-width: 30rem;
     margin: auto;
@@ -36,6 +44,7 @@
       a {
         color: $orangeClr;
         font-weight: 700;
+        margin-left: 0.2rem;
       }
     }
   }

@@ -1,26 +1,41 @@
-import { Form, Link, redirect } from "react-router";
+import {
+  Form,
+  Link,
+  redirect,
+  useActionData,
+  useNavigation,
+} from "react-router";
+import { createUserAccount } from "../../firebase/auth";
 import "./SignUp.scss";
-import { createAccountWithEmailAndPassword } from "../../firebase/auth";
 
 export async function action({ request }: { request: Request }) {
   const formData = await request.formData();
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
   const confirmedPassword = formData.get("confirmedPassword") as string;
+  const pathname =
+    new URL(request.url).searchParams.get("redirectTo") || "/host";
   if (!email || !password || !confirmedPassword) {
-    console.error("please enter all fields.");
-    return;
+    console.error("Some fields are not filled.");
+    return { error: "Please fill out all fields." };
   } else if (password !== confirmedPassword) {
-    console.error("Please confirm your password correctly");
-    return;
+    console.error("Please confirm your password correctly.");
+    return { error: "Please confirm your password correctly." };
   } else {
-    const result = await createAccountWithEmailAndPassword(email, password);
-    if (result) return redirect("/host");
+    const result = await createUserAccount(email, password);
+    if (result.success) {
+      return redirect(pathname);
+    } else {
+      return { error: result.error };
+    }
   }
-  return null;
 }
 
-export default function SignIn() {
+export default function SignUp() {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
+  const formErrorMessage = useActionData();
+
   return (
     <main className="sign-up-main">
       <h1>Register</h1>
@@ -45,7 +60,12 @@ export default function SignIn() {
             required
           />
         </div>
-        <button>Sign up</button>
+        {formErrorMessage && (
+          <h3 className="form-error">{formErrorMessage.error}</h3>
+        )}
+        <button disabled={isSubmitting}>
+          {isSubmitting ? "Signing up..." : "Sign up"}
+        </button>
         <p className="redirect-text">
           Already have an account? <Link to="/signin">Sign in</Link>
         </p>

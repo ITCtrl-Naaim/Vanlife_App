@@ -1,5 +1,7 @@
-import { getVans } from "../firebase/api";
+import { getHostVans } from "../firebase/api";
+import { checkAuth } from "../utils";
 
-export function loader() {
-  return { vans: getVans() };
+export async function loader({ request }: { request: Request }) {
+  await checkAuth(request);
+  return { vans: getHostVans() };
 }
