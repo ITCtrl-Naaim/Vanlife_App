@@ -2,6 +2,7 @@ import { Await, Link, useLoaderData } from "react-router";
 import { Van } from "@/types/van";
 import { Suspense } from "react";
 import "./HostVans.scss";
+import LoadingUI from "@/components/LoadingUI/LoadingUI";
 
 export default function HostVans() {
   const vansPromise = useLoaderData();
@@ -25,7 +26,7 @@ export default function HostVans() {
     <section className="host-vans">
       <h2 className="header">Your listed vans</h2>
       <div className="vans-list">
-        <Suspense fallback={<h2>Loading...</h2>}>
+        <Suspense fallback={<LoadingUI />}>
           <Await resolve={vansPromise.vans}>{renderElements}</Await>
         </Suspense>
       </div>

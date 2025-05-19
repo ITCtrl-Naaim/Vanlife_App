@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { useSearchParams, useLoaderData, Await, Link } from "react-router";
 import type { Van } from "@/types/van";
+import LoadingUI from "@/components/LoadingUI/LoadingUI";
 import "./Vans.scss";
 
 export default function Vans() {
@@ -93,7 +94,7 @@ export default function Vans() {
   return (
     <main className="vans-main">
       <h1>Explore our van options</h1>
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<LoadingUI />}>
         <Await resolve={vansPromise.vans}>{renderElements}</Await>
       </Suspense>
     </main>

@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Await, Link, useLoaderData } from "react-router";
 import { Van } from "@/types/van";
 import "./Dashboard.scss";
+import LoadingUI from "@/components/LoadingUI/LoadingUI";
 
 export default function Dashboard() {
   const vansPromise = useLoaderData();
@@ -55,7 +56,7 @@ export default function Dashboard() {
           </Link>
         </div>
         <div className="vans-container">
-          <Suspense fallback={<h2>Loading...</h2>}>
+          <Suspense fallback={<LoadingUI />}>
             <Await resolve={vansPromise.vans}>{renderElements}</Await>
           </Suspense>
         </div>

@@ -1,6 +1,7 @@
 import { Await, useLoaderData } from "react-router";
 import "./Reviews.scss";
 import { Suspense } from "react";
+import LoadingUI from "@/components/LoadingUI/LoadingUI";
 
 export default function Reviews() {
   const commentsDataPromise = useLoaderData();
@@ -82,7 +83,7 @@ export default function Reviews() {
       <h1>
         Your reviews <span>last 30 days</span>
       </h1>
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<LoadingUI />}>
         <Await resolve={commentsDataPromise.comments}>{renderElements}</Await>
       </Suspense>
     </section>
