@@ -1,9 +1,9 @@
 import { useOutletContext } from "react-router";
-import { Van } from "../../../../Vans/Vans";
-import "./HostVanInfo.scss"
+import { Van } from "@/types/van";
+import "./HostVanInfo.scss";
 
 export default function HostVanInfo() {
-  const { van }: Van = useOutletContext();
+  const { van } = useOutletContext<{ van: Van }>();
   return (
     <div className="host-van-info">
       <h3>

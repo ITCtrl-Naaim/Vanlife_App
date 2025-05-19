@@ -5,7 +5,7 @@ import {
   useActionData,
   useNavigation,
 } from "react-router";
-import { createUserAccount } from "../../firebase/auth";
+import { createUserAccount } from "@/firebase/authHelpers";
 import "./SignUp.scss";
 
 export async function action({ request }: { request: Request }) {

@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { redirect } from "react-router";
-import { auth } from "./firebase/config";
+import { auth } from "@/firebase/config";
 
 export function getCurrentUser() {
   return new Promise((resolve) => {

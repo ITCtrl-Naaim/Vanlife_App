@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Await, Link, useLoaderData } from "react-router";
-import { Van } from "../../Vans/Vans";
+import { Van } from "@/types/van";
 import "./Dashboard.scss";
 
 export default function Dashboard() {

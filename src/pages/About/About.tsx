@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import aboutImage from "../../assets/images/about.png";
+import aboutImage from "@/assets/images/about.png";
 import "./About.scss";
 
 export default function About() {

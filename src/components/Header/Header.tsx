@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router";
-import loginImage from "../../assets/images/loginImage.png";
+import loginImage from "@/assets/images/loginImage.png";
 import "./Header.scss";
 
 export default function Header() {

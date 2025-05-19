@@ -1,5 +1,5 @@
 import { Await, Link, useLoaderData } from "react-router";
-import { Van } from "../../Vans/Vans";
+import { Van } from "@/types/van";
 import { Suspense } from "react";
 import "./HostVans.scss";
 

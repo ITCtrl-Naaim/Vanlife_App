@@ -1,15 +1,7 @@
 import { Suspense } from "react";
 import { useSearchParams, useLoaderData, Await, Link } from "react-router";
+import type { Van } from "@/types/van";
 import "./Vans.scss";
-
-export type Van = {
-  name: string;
-  type: string;
-  description: string;
-  imageURL: string;
-  price: number;
-  id: string;
-};
 
 export default function Vans() {
   const vansPromise = useLoaderData();

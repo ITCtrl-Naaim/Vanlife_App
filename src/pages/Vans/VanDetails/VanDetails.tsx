@@ -1,6 +1,6 @@
 import { Await, Link, useLoaderData, useLocation } from "react-router";
 import { Suspense } from "react";
-import { Van } from "../Vans";
+import { Van } from "@/types/van";
 import "./VanDetails.scss";
 
 export default function VanDetails() {

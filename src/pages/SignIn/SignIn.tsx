@@ -7,7 +7,7 @@ import {
   useNavigation,
   useSearchParams,
 } from "react-router";
-import { signInUserAccount } from "../../firebase/auth";
+import { signInUserAccount } from "@/firebase/authHelpers";
 import "./SignIn.scss";
 
 export async function action({ request }: { request: Request }) {

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Await, Link, NavLink, Outlet, useLoaderData } from "react-router";
-import { Van } from "../../../Vans/Vans";
+import { Van } from "@/types/van";
 import "./HostVanDetails.scss";
 
 export default function HostVanDetails() {
