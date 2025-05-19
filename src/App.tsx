@@ -37,6 +37,7 @@ import { action as signUpAction } from "./pages/SignUp/SignUp";
 import { action as signInAction } from "./pages/SignIn/SignIn";
 import { checkAuth } from "./utils";
 import SignOut from "./pages/SignOut/SignOut";
+import ErrorBoundary from "./components/Error/ErrorBoundary";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,7 @@ const router = createBrowserRouter([
           {
             path: "vans/:id",
             element: <HostVanDetails />,
+            errorElement: <ErrorBoundary title="Could not load van details" />,
             loader: hostVanDetailsLoader,
             children: [
               {
