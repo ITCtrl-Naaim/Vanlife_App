@@ -1,6 +1,11 @@
 .about-main {
   img {
     width: 100%;
+    @media (min-width: 767px) {
+      max-height: 25rem;
+      object-fit: cover;
+      object-position: bottom;
+    }
   }
   .content {
     padding: 3rem $layoutInlinePadding;

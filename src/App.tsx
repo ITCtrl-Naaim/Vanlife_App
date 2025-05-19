@@ -47,6 +47,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+        errorElement: <ErrorBoundary />,
       },
       {
         path: "host",
@@ -56,21 +57,34 @@ const router = createBrowserRouter([
             index: true,
             element: <Dashboard />,
             loader: dashboardLoader,
+            errorElement: <ErrorBoundary title="Could not load dashboard" />,
           },
           {
             path: "income",
             element: <Income />,
             loader: async ({ request }) => await checkAuth(request),
+            errorElement: <ErrorBoundary title="Could not load income page" />,
           },
           {
             path: "vans",
             element: <HostVans />,
             loader: hostVansLoader,
+            errorElement: (
+              <ErrorBoundary
+                title="Could not load vans"
+                desc="Something went wrong while trying to fetch vans."
+              />
+            ),
           },
           {
             path: "vans/:id",
             element: <HostVanDetails />,
-            errorElement: <ErrorBoundary title="Could not load van details" />,
+            errorElement: (
+              <ErrorBoundary
+                title="Could not load van's details"
+                desc="Something went wrong while trying to fetch this van. It might have been removed or doesn't exist."
+              />
+            ),
             loader: hostVanDetailsLoader,
             children: [
               {
@@ -94,22 +108,36 @@ const router = createBrowserRouter([
             path: "reviews",
             element: <Reviews />,
             loader: reviewsLoader,
+            errorElement: <ErrorBoundary title="Could not load reviews page" />,
           },
         ],
       },
       {
         path: "about",
         element: <About />,
+        errorElement: <ErrorBoundary title="Could not load about page" />,
       },
       {
         path: "vans",
         element: <Vans />,
         loader: vansLoader,
+        errorElement: (
+          <ErrorBoundary
+            title="Could not load vans"
+            desc="Something went wrong while trying to fetch vans."
+          />
+        ),
       },
       {
         path: "vans/:id",
         element: <VanDetails />,
         loader: vanDetailsLoader,
+        errorElement: (
+          <ErrorBoundary
+            title="Could not load van's details"
+            desc="Something went wrong while trying to fetch this van. It might have been removed or doesn't exist."
+          />
+        ),
       },
       {
         path: "signin",

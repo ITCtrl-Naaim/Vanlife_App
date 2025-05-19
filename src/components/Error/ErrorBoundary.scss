@@ -1,5 +1,14 @@
 .error-boundary {
+  max-width: 40rem;
+  margin: 3rem auto;
   padding-inline: $layoutInlinePadding;
-  margin-block: 1rem;
   text-align: center;
+  .desc {
+    margin-block: 1.5rem;
+    line-height: 1.5;
+  }
+  .link-button {
+    @include buttonShape($blackClr, $padding: 1rem);
+    width: 100%;
+  }
 }

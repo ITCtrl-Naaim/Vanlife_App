@@ -21,7 +21,9 @@ export default function VanDetails() {
             ${van.price}
           </span>
           <p className="description">{van.description}</p>
-          <button className="rent-btn">Rent This Van</button>
+          <Link to="rent" className="rent-btn">
+            Rent This Van
+          </Link>
         </div>
       </div>
     );

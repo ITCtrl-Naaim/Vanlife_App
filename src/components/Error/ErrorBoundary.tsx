@@ -1,19 +1,24 @@
-import { useRouteError, isRouteErrorResponse } from "react-router";
-import "./ErrorBoundary.scss"
+import { Link, useRouteError } from "react-router";
+import "./ErrorBoundary.scss";
 
-export default function ErrorBoundary({ title }: { title?: string }) {
+export default function ErrorBoundary({
+  title,
+  desc,
+}: {
+  title?: string;
+  desc?: string;
+}) {
   const error = useRouteError();
 
+  console.error(error);
+
   return (
-    <main className="error-boundary">
-      <h1>{title || "Something went wrong 😢"}</h1>
-      <p>
-        {isRouteErrorResponse(error)
-          ? `${error.status} - ${error.statusText}`
-          : error instanceof Error
-          ? error.message
-          : "Unknown error"}
-      </p>
-    </main>
+    <div className="error-boundary">
+      <h1>{`${title || "Something went wrong"} 😥`}</h1>
+      <p className="desc">{desc || "Something went wrong while loading"}</p>
+      <Link to="/" className="link-button">
+        Return to Home
+      </Link>
+    </div>
   );
 }

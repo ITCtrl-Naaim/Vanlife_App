@@ -6,7 +6,7 @@
     color: $blackClr;
     margin-bottom: 2rem;
   }
-  a {
+  .link-button {
     @include buttonShape($blackClr, $padding: 1rem);
     width: 100%;
   }
